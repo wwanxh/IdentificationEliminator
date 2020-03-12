@@ -1,0 +1,62 @@
+# Don't include any special characters in names
+# Use the following format: NAME	REGEX --> (tab \t between NAME and REGEX)
+doc_older_pattern_0	xxxxDOCTOR_OLDERxxxx [\d]+\*\*
+doc_older_pattern_1	xxxxDOCTOR_OLDERxxxx Last Name [ |\d]*\*\*
+doc_older_pattern_2	xxxxDOCTOR_OLDERxxxx
+doc_older_pattern_3	xxxxDOCTORxxxx
+access_num_pattern	xxxxACCESSION_NEWxxxx
+age_pattern_0	\*\*Age \*\* [\d]+\*\*
+age_pattern_05	\*\*Age \*\* \*\*
+age_pattern_1	\*\*Age \*\*
+age_pattern_2	xxxxAGExxxx
+age_pattern_3	xxxxAGE3xxxx
+address_pattern	xxxxADDRESSxxxx
+address_pattern	xxxxADDRESS\dxxxx
+facilicty_patter	xxxxFACILITY_NAME\d?xxxx
+facilicty_patter	xxxxFACILITY_NAMExxxx
+facility_patter3	xxxxFACILITYxxxx
+suspicous_num	xxxxSUSPICIOUS_NUMxxxx
+date_sep	xxxxDATE_SEPERATORSxxxx
+age_pattern_4	xxxxDATE\d?xxxx
+hospital_pattern	xxxxHOSPITALxxxx
+age_pattern_5	xxxxWRITTEN_AGE_1_TO_19xxxx
+accession_pattern	xxxxACCESSION_ODDxxxx
+titles_pattern	xxxxTITLESxxxx
+accession_pattern_2	xxxxACCESSION_NUMBERxxxx
+words_pattern	xxxxSPECIAL_WORDSxxxx
+email_pattern	xxxxEMAIL_ADDRESSxxxx
+date_pattern	\*\*Date\*\*
+date_pattern2	\*\*Month/Day/Year \d\d\*\*
+date_pattern3	\*\*Month Day Year ([0-9]) [0-9]\*\*
+name_pattern_1a	\*\*Female First Name \(un\)[ |\d]*\*\*
+name_pattern_1b	\*\*Male First Name \(un\)[ |\d]*\*\*
+name_pattern_2a	\*\*First Name\d* \([A-Za-z]+\) \d*\*\*
+name_pattern_2a1	\*\*Name\d* \([A-Za-z]+\) \d*\*\*
+name_pattern_2a2	\*\*Name Prefix\d* \([A-Za-z]+\) \d*\*\*
+name_pattern_2a2	\*\*Name Initial\d* \([A-Za-z]+\) \d*\*\*
+name_pattern_2b	\*\*First Name \([A-Za-z]+\)* \d*\*\*
+name_pattern_2c	\*\*Last Name \([A-Za-z]+\)* \d*\*\*
+name_pattern_2d	\*\*First Name\d* *\d*\*\*
+name_pattern_2e	\*\*Last Name *\d*\*\*
+phone_pattern	\*\*Telephone/Fax[ |\d|(|)]*\*\*
+age_pattern	\*\*Age \*\*
+url_pattern	\*\*URL[ |\d]*\*\*
+initial_pattern	\*\*Initials[ |\d]*\*\*
+initial_pattern	\*\*Initial  \d*\*\*
+mrn_pattern	\*\*Medical Record Number[ |\d]*\*\*
+sig_pattern	\*\*Signature [0-9]+\*\*
+unit_pattern	\*\*Unit Number[ |\d]*\*\*
+SSN_pattern	\*\*Social Security Number [ |\d]*\*\*
+pg_pattern	\*\*Pager number[ |\d]*\*\*
+holiday_pattern	\*\*Holiday[ |\d]*\*\*
+email_pattern	\*\*E mail address[ |\d]*\*\*
+DOCTOR-OLDER	xxxxDOCTOR_OLDERxxxx
+ACCESSION_NEW	xxxxACCESSION_NEWxxxx
+HOSPITAL	xxxxHOSPITALxxxx
+SUSPICIOUS_NUM	xxxxSUSPICIOUS_NUMxxxx
+DATE-1	xxxxDATE\dxxxx
+AGE-2	xxxxAGE3xxxx
+# nested identification, eg.  ** years xxxxFACILITY_NAME2xxxx 2013**
+#year_nested	\*\* years(.*?)+\*\*
+# Number only
+number_only	\*\*[\d]+\*\*
