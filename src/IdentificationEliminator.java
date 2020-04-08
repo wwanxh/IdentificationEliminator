@@ -8,11 +8,14 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class IdentificationEliminator {
-	// Please modify paths
+	// Please modify the path of the directory containing regular expressions here
 	public final static String regex_dir = "regex/";
+	// Please modify the path of the directory containing input text here
 	public final static String text_path = "text/cleaner_sample";
+	// Regular Expression (regex) patterns read from regex files
+	private List<Pattern> patterns;
 	
-	List<Pattern> patterns;
+	// Constructor, read regex patterns from files at the startup time
 	public IdentificationEliminator() {
 		File folder = new File(regex_dir);
 		File[] listOfRegex = folder.listFiles();
@@ -23,8 +26,11 @@ public class IdentificationEliminator {
 				br = new BufferedReader(new FileReader(file));
 				String st;
 				while((st = br.readLine()) != null) {
+					// Exclude lines that are either empty or comments (starting with  '#')
 					if(st.length() == 0 || st.charAt(0) == '#') continue;
+					// Split the line by the delimiter 
 					String[] strs = st.split("\t");
+					
 					patterns.add(Pattern.compile(strs[1]));
 				}
 			} catch (IOException e) {
@@ -34,6 +40,8 @@ public class IdentificationEliminator {
 		}
 	}
 	// Perform pattern matching and replacement on text
+	// Argument: 	String text -> input text
+	// Return:		text with identification eliminated
 	public String eliminateIndentif(String text) {
 		String newtext = text;
 		for(Pattern pattern : patterns) {
@@ -42,7 +50,9 @@ public class IdentificationEliminator {
 		}
 		return newtext;
 	}
-
+	// Generate random String to be replaced with identifications in the input text
+	// Input:	the length of random string to be generated
+	// Return:	a randomized string consisting of numbers and English alphabets 
 	final String alphabet = "1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	private String randomIdentfGen(int length) {
 		String r = "";
